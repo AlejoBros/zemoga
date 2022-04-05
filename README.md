@@ -6,6 +6,7 @@
 * maven
 * nodejs
 * java11
+* npm
 1. Ingresar en la terminal a la raiz del proyecto angular-app
 2. Generar la imagen del proyecto frontend
 ````
