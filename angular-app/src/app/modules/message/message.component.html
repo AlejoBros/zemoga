@@ -1,0 +1,17 @@
+<ng-template #modalMessage let-modal>
+  <div class="modal-header text-light border-bottom-0 rounded-0 bg-dark">
+    <div class="modal-title fs-5 fw-bold">Icono</div>
+    <button class="btn btn-dark rounded-0" type="button"
+            (click)="modal.dismiss()"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="modal-body bg-dark py-0">
+    <div class="row">
+
+    </div>
+  </div>
+  <div class="modal-footer pt-0 border-0 bg-dark">
+    <button class="btn btn-sm btn-danger rounded-0" type="button" (click)="modal.close()"><i
+      class="fas fa-times"></i>&nbsp;&nbsp;{{constant.LABEL_CLOSE}}
+    </button>
+  </div>
+</ng-template>

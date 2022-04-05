@@ -1,0 +1,45 @@
+<div class="row bg-dark border-bottom border-secondary" id="header-page">
+  <div class="col-auto p-0">
+    <button class="btn btn-dark rounded-0 btn-lg border-0" style="min-width: 52px" type="button"
+            (click)="changeStateMenu()"><i class="fas fa-{{this.globals.iconMenu}}"></i></button>
+  </div>
+  <div class="col">
+    <div class="row justify-content-center">
+      <div class="col-auto">
+        <p class="h5 font-weight-bold text-light py-2 m-0" style="line-height: 1.5">Users</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-auto p-0 d-none">
+    <!-- Large button groups (default and split) -->
+    <div class="btn-group">
+      <button class="btn btn-dark rounded-0 btn-lg p-0 border-0" type="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+        <!--i class="fas fa-user-circle p-0 m-0"></i-->
+        <img src="https://ca.slack-edge.com/T8YT51NKC-U012GC59P9C-3509bbac9207-512" class=""
+             style="max-width: 52px; max-height: 48px">
+      </button>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div id="menu" class="col-auto vh-100 px-0 bg-dark border-right border-secondary {{globals.displayMenu}}"
+       style="min-width: 175px">
+    <div class="nav flex-column nav-pills">
+      <div class="btn-group dropdown">
+        <a class="nav-link w-100 rounded-0 text-light bg-dark" routerLink="/user" routerLinkActive="active">
+          <i class="fas fa-user-tie"></i>&nbsp;&nbsp;Users
+        </a>
+        <a class="nav-link dropdown-toggle-split rounded-0 text-light bg-dark" data-bs-toggle="dropdown"><i
+          class="fas fa-ellipsis-v"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right m-0 p-0 rounded-0 border-0 bg-secondary">
+          <a class="dropdown-item small" [routerLink]="['/user/create']">Create</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="actual-page" class="col vh-100">
+    <router-outlet></router-outlet>
+  </div>
+</div>

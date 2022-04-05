@@ -1,0 +1,49 @@
+<ng-template #modalUserCreate let-modal>
+  <div class="modal-header text-light border-bottom-0 rounded-0 bg-dark">
+    <div class="modal-title fs-5 fw-bold">{{constant.LABEL_CREATE_USER}}</div>
+    <button class="btn btn-dark rounded-0" type="button"
+            (click)="modal.dismiss()"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="modal-body bg-dark py-0">
+    <div class="row">
+      <div class="col-12 mb-3">
+        <label class="form-label text-light fw-bold">{{constant.LABEL_FIRST_NAME}}</label>
+        <input class="form-control form-control-sm bg-dark text-light rounded-0" type="text" autocomplete="off"
+               [(ngModel)]="user.firstName" (input)="user.firstName = user.firstName.toUpperCase()">
+      </div>
+      <div class="col-12 mb-3">
+        <label class="form-label text-light fw-bold">{{constant.LABEL_LAST_NAME}}</label>
+        <input class="form-control form-control-sm bg-dark text-light rounded-0" type="text" autocomplete="off"
+               [(ngModel)]="user.lastName"
+               (input)="user.lastName = user.lastName.toUpperCase()">
+      </div>
+      <div class="col-12 mb-3">
+        <label class="form-label text-light fw-bold">{{constant.LABEL_USERNAME_TWITTER}}</label>
+        <input class="form-control form-control-sm bg-dark text-light rounded-0" type="text" autocomplete="off"
+               [(ngModel)]="user.usernameTwitter"
+               (input)="user.usernameTwitter = user.usernameTwitter.toUpperCase()">
+      </div>
+      <div class="col-12 mb-3">
+        <label class="form-label text-light fw-bold">{{constant.LABEL_PHOTO}}</label>
+        <input class="form-control form-control-sm bg-dark text-light rounded-0" type="text" autocomplete="off"
+               [(ngModel)]="user.photo"
+               (input)="user.photo = user.photo">
+      </div>
+      <div class="col-12 mb-3">
+        <label class="form-label text-light fw-bold">{{constant.LABEL_WORK_EXPERIENCE}}</label>
+        <textarea class="form-control form-control-sm bg-dark text-light rounded-0" type="text" autocomplete="off"
+               id="user-contact_information-address"
+               [(ngModel)]="user.workExperience"
+                  (input)="user.workExperience = user.workExperience.toUpperCase()"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer pt-0 border-0 bg-dark">
+    <button class="btn btn-sm btn-danger rounded-0" type="button" (click)="modal.close()"><i
+      class="fas fa-times"></i>&nbsp;&nbsp;{{constant.LABEL_CLOSE}}
+    </button>
+    <button class="btn btn-sm btn-primary rounded-0" type="button" (click)="create()"><i
+      class="fas fa-save"></i>&nbsp;&nbsp;{{constant.LABEL_CREATE}}
+    </button>
+  </div>
+</ng-template>

@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  mysql:
+    image: mysql:latest
+    ports:
+      - "20211:3306"
+    environment:
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 123456
+      MYSQL_ROOT_PASSWORD: 123456
+  backend:
+    depends_on:
+      - mysql
+    image: backend:latest
+    ports:
+      - "20212:8080"
+    environment:
+      - "SPRING_PROFILES_ACTIVE=local"
+  frontend:
+    depends_on:
+      - backend
+    image: frontend:latest
+    ports:
+      - "20213:80"

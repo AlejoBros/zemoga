@@ -1,0 +1,54 @@
+<ng-template #modalUserRead let-modal>
+  <div class="modal-header text-light border-bottom-0 rounded-0 bg-dark">
+    <div class="modal-title fs-5 fw-bold">{{constant.LABEL_GET_USER}}</div>
+    <button class="btn btn-dark rounded-0" type="button"
+            (click)="modal.dismiss()"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="modal-body bg-dark py-0">
+    <div class="row" *ngIf="user">
+      <div class="col-12 mb-3">
+        <img src="{{user.photo}}" class="img-thumbnail">
+      </div>
+      <div class="col-12 mb-3">
+        <label class="form-label text-light fw-bold">{{constant.LABEL_FIRST_NAME}}</label>
+        <input class="form-control form-control-sm bg-dark text-light form-control-plaintext rounded-0 border-bottom" type="text" autocomplete="off"
+               [ngModel]="user.firstName | uppercase" disabled>
+      </div>
+      <div class="col-12 mb-3">
+        <label class="form-label text-light fw-bold">{{constant.LABEL_LAST_NAME}}</label>
+        <input class="form-control form-control-sm bg-dark text-light form-control-plaintext rounded-0 border-bottom" type="text" autocomplete="off"
+               [ngModel]="user.lastName | uppercase" disabled>
+      </div>
+      <div class="col-12 mb-3">
+        <label class="form-label text-light fw-bold">{{constant.LABEL_USERNAME_TWITTER}}</label>
+        <input class="form-control form-control-sm bg-dark text-light form-control-plaintext rounded-0 border-bottom" type="text" autocomplete="off"
+               [ngModel]="user.usernameTwitter | uppercase" disabled>
+      </div>
+      <div class="col-12 mb-3">
+        <label class="form-label text-light fw-bold">{{constant.LABEL_WORK_EXPERIENCE}}</label>
+        <textarea class="form-control form-control-sm bg-dark text-light form-control-plaintext rounded-0 border-bottom"
+           type="text" autocomplete="off"
+                  [ngModel]="user.workExperience | uppercase" disabled></textarea>
+      </div>
+      <div class="col-12 mb-3" *ngIf="tweets">
+        <table class="table table-dark table-hover table-sm my-0">
+          <thead>
+          <tr>
+            <th style="position: sticky; top: 0;" class="border-0">TWEETS</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let tweet of tweets">
+            <td class="align-middle">{{tweet.text}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer pt-0 border-0 rounded-0 bg-dark">
+    <button class="btn btn-sm btn-danger rounded-0" type="button" (click)="modal.close()"><i
+      class="fas fa-times"></i>&nbsp;&nbsp;Close
+    </button>
+  </div>
+</ng-template>
